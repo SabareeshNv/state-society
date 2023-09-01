@@ -1,0 +1,62 @@
+<header class="shadow">
+  <div class="wrapper navbar">
+    <nav>
+      <div class="brand"><a href="/">State & Society</a></div>
+    </nav>
+    <ul class="flex-row">
+      <li>
+        <a href="/post">All Posts</a>
+      </li>
+      <li>
+        <a href="/category">Category</a>
+      </li>
+      <li>
+        <a href="/about">About Us</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<style lang="scss">
+  header {
+    padding-block: 0.5em;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75em;
+    align-items: center;
+
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .brand {
+    font-size: var(--fs-5);
+    font-weight: 700;
+    text-align: center;
+
+    @media (min-width: 600px) {
+      text-align: left;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @media (min-width: 600px) {
+      justify-content: flex-end;
+      gap: 3em;
+    }
+  }
+
+  li a {
+    font-size: var(--fs-3);
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+import Card from "./Card.astro";
+import { getCollection } from "astro:content";
+import { formatBlogPosts } from "../js/helpers";
+
+const allPosts = await getCollection("post");
+const filteredPosts = formatBlogPosts(allPosts, { limit: 6 });
+---
+
+<section>
+  <div class="wrapper padding-y">
+    <h2 class="font-gothic">Stay Informed with Us!</h2>
+    <p>Get the latest updates on government policies and their impact.</p>
+
+    <div class="responsive-grid">
+      {filteredPosts.map((post) => <Card {post} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    font-size: var(--fs-6);
+  }
+
+  p {
+    font-size: var(--fs-4);
+  }
+</style>

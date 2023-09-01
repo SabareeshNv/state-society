@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.astro";
+
+import { getCollection } from "astro:content";
+import { formatBlogPosts } from "../../js/helpers";
+
+const allPosts = await getCollection("post");
+const filteredPosts = formatBlogPosts(allPosts);
+
+const title = "All Posts";
+const description = "Here are all our posts";
+---
+
+<BaseLayout {title} {description}>
+  <main>
+    <div class="wrapper">
+      <h2 class="font-gothic">All Posts. Stay Informed</h2>
+      <p>Here is the list of all our posts. Enjoy!</p>
+      <div class="responsive-grid">
+        {filteredPosts.map((post) => <Card {post} />)}
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    padding-block: 1em;
+  }
+
+  h2 {
+    font-size: var(--fs-6);
+  }
+
+  p {
+    font-size: var(--fs-4);
+  }
+</style>

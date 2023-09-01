@@ -1,0 +1,30 @@
+---
+import FeaturedCard from "./FeaturedCard.astro";
+import { getCollection } from "astro:content";
+import { formatBlogPosts } from "../js/helpers";
+
+const allPosts = await getCollection("post");
+const filteredPosts = formatBlogPosts(allPosts);
+const featuredPosts = filteredPosts.filter((post) => post.data.featured);
+---
+
+<section>
+  <div class="wrapper padding-y">
+    <h2 class="font-gothic">Featured Stories</h2>
+    <p>Here are some of our articles that caught fire !</p>
+
+    <div class="responsive-grid">
+      {featuredPosts.map((post) => <FeaturedCard {post} />)}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  h2 {
+    font-size: var(--fs-6);
+  }
+
+  p {
+    font-size: var(--fs-4);
+  }
+</style>

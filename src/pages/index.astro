@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroImage from "../components/HeroImage.astro";
+import FeaturedSection from "../components/FeaturedSection.astro";
+import LatestSection from "../components/LatestSection.astro";
+
+const title =
+  "Welcome to State & Society, where we analyse the intersection of Government policies and their repurcussions on the society";
+const description = "Homepage of State & Society blog.";
+---
+
+<BaseLayout {title} {description}>
+  <HeroImage />
+  <FeaturedSection />
+  <LatestSection />
+</BaseLayout>

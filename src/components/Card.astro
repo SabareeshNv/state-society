@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+
+const { post } = Astro.props;
+const { title, summary, imageSrc, imageAlt } = post.data;
+---
+
+<article class="shadow">
+  <a href={`/post/${post.slug}/`}>
+    <div class="card-img-container">
+      <Image src={imageSrc} alt={imageAlt} quality="mid" class="card-img" />
+    </div>
+    <div class="card-content">
+      <h2>
+        {title}
+      </h2>
+
+      <p>
+        {summary}
+      </p>
+    </div>
+  </a>
+</article>
+
+<style lang="scss">
+  article {
+    border-radius: 0.25em;
+  }
+
+  .card-img-container {
+    overflow: hidden;
+    height: 15em;
+  }
+
+  .card-img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .card-content {
+    padding: 1.25em 1em;
+  }
+
+  h2 {
+    font-size: var(--fs-4);
+    line-height: 1.2;
+    margin-block-end: 0.75em;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+</style>

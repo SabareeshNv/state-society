@@ -1,0 +1,53 @@
+---
+import { getImage } from "astro:assets";
+import myBackground from "../assets/images/writter.png";
+const heroImage = await getImage({
+  src: myBackground,
+  quality: "high",
+});
+---
+
+<section
+  class="bg-image"
+  style={`background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),url(${heroImage.src});`}
+>
+  <div class="max-w flex-col hero-content">
+    <div class="hero-heading">
+      Looking at the world with a critical (Indian) perspective.
+    </div>
+
+    <!-- <p>
+      Stay informed about the latest Government policies, decisions and their
+      effects on every day person with our insightful articles and analysis
+    </p> -->
+  </div>
+</section>
+
+<style>
+  section {
+    color: var(--clr-white);
+    height: 80vh;
+    background-position: center;
+    background-color: #19413f;
+  }
+
+  .hero-content {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .hero-heading {
+    font-size: var(--fs-5);
+    font-weight: 600;
+    margin-block-end: 0.75em;
+    text-align: center;
+    word-spacing: 0.25rem;
+  }
+
+  p {
+    font-size: var(--fs-3);
+    font-weight: 300;
+    text-align: center;
+  }
+</style>

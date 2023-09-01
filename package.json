@@ -1,0 +1,22 @@
+{
+  "name": "state-society",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^3.0.2"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1",
+    "sharp": "^0.32.5",
+    "@astrojs/mdx": "^1.0.0",
+    "@fontsource/alegreya-sans": "^5.0.8",
+    "@fontsource/league-gothic": "^5.0.11"
+  }
+}
