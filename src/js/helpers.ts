@@ -44,7 +44,7 @@ export function formatBlogPosts(
   // sortByDate or randomize
   if (sortByDate) {
     filteredPosts.sort(
-      (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+      (a, b) => +new Date(b.data.pubDate) - +new Date(a.data.pubDate)
     );
   } else {
     filteredPosts.sort(() => Math.random() - 0.5);
@@ -63,4 +63,15 @@ export function getReadingTime(content) {
   const clean = content.replace(/<\/?[^>]+(>|$)/g, "");
   const numberOfWords = clean.split(/\s/g).length;
   return Math.ceil(numberOfWords / WORDS_PER_MINUTE);
+}
+
+export function generateCategoryData(categories) {
+  let categoryData = [];
+  categories.forEach((category) => {
+    categoryData.push({
+      name: category,
+      slug: `${slugify(category)}`,
+    });
+  });
+  return categoryData;
 }

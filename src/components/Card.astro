@@ -1,25 +1,30 @@
 ---
 import { Image } from "astro:assets";
+import { slugify } from "../js/helpers";
 
 const { post } = Astro.props;
-const { title, summary, imageSrc, imageAlt } = post.data;
+const { title, summary, category, imageSrc, imageAlt } = post.data;
 ---
 
 <article class="shadow">
-  <a href={`/post/${post.slug}/`}>
-    <div class="card-img-container">
-      <Image src={imageSrc} alt={imageAlt} quality="mid" class="card-img" />
-    </div>
-    <div class="card-content">
-      <h2>
-        {title}
-      </h2>
+  <div class="card-img-container">
+    <a href={`/post/${post.slug}/`}>
+      <Image src={imageSrc} alt={imageAlt} class="card-img" />
+    </a>
+  </div>
+  <div class="card-content">
+    <a href={`/category/${slugify(category)}`} class="card-category"
+      >{category.toUpperCase()}</a
+    >
 
-      <p>
-        {summary}
-      </p>
-    </div>
-  </a>
+    <h2 class="heading">
+      <a href={`/post/${post.slug}/`}>{title}</a>
+    </h2>
+
+    <p>
+      {summary}
+    </p>
+  </div>
 </article>
 
 <style lang="scss">
@@ -38,7 +43,29 @@ const { title, summary, imageSrc, imageAlt } = post.data;
   }
 
   .card-content {
-    padding: 1.25em 1em;
+    padding: 1em 1em 1.5em;
+  }
+
+  .card-category {
+    display: block;
+    margin-block-end: 1em;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: #581c87;
+    letter-spacing: 0.05em;
   }
 
   h2 {

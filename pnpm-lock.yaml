@@ -16,6 +16,9 @@ devDependencies:
   '@fontsource/alegreya-sans':
     specifier: ^5.0.8
     version: 5.0.8
+  '@fontsource/inter':
+    specifier: ^5.0.8
+    version: 5.0.8
   '@fontsource/league-gothic':
     specifier: ^5.0.11
     version: 5.0.11
@@ -669,6 +672,10 @@ packages:
 
   /@fontsource/alegreya-sans@5.0.8:
     resolution: {integrity: sha512-hipZVZW+0OLjNvSUlPFSNxqBYOTeM9heZA8xq6oxlGxK9GbJi8KKMpgRtz9g3HBYqBbNjdUWZz9ODj8S+0LPJw==}
+    dev: true
+
+  /@fontsource/inter@5.0.8:
+    resolution: {integrity: sha512-28knWH1BfOiRalfLs90U4sge5mpQ8ZH6FS0PTT+IZMKrZ7wNHDHRuKa1kQJg+uHcc6axBppnxll+HXM4c7zo/Q==}
     dev: true
 
   /@fontsource/league-gothic@5.0.11:

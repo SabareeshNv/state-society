@@ -4,7 +4,7 @@ summary: "Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum ani
 description: "some description"
 pubDate: "2023-02-01"
 category: "Typography"
-imageSrc: "../../assets/images/post/typography.jpg"
+imageSrc: "../../assets/images/post/typography.png"
 imageAlt: "A picture of a coder"
 featured: true
 ---

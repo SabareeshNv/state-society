@@ -3,7 +3,6 @@ import { getImage } from "astro:assets";
 import myBackground from "../assets/images/writter.png";
 const heroImage = await getImage({
   src: myBackground,
-  quality: "high",
 });
 ---
 
@@ -13,7 +12,7 @@ const heroImage = await getImage({
 >
   <div class="max-w flex-col hero-content">
     <div class="hero-heading">
-      Looking at the world with a critical (Indian) perspective.
+      Looking at the world with a critical perspective.
     </div>
 
     <!-- <p>

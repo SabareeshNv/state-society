@@ -98,10 +98,29 @@ img {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+/* My Stylistic Underline for headings */
+.heading::after {
+  content: "";
+  display: block;
+  margin-top: 0.3em;
+  width: clamp(2em, 25%, 3em);
+  height: 3px;
+  background-color: #212121;
+}
+
+.nav-item:hover::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #212121;
+}
+
+// Typography Styles
 .prose {
   max-width: 70ch;
   word-spacing: 0.15rem;
   font-size: var(--fs-3);
+  margin-inline: auto;
 
   h1 {
     font-size: var(--fs-6);

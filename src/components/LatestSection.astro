@@ -9,8 +9,8 @@ const filteredPosts = formatBlogPosts(allPosts, { limit: 6 });
 
 <section>
   <div class="wrapper padding-y">
-    <h2 class="font-gothic">Stay Informed with Us!</h2>
-    <p>Get the latest updates on government policies and their impact.</p>
+    <h2 class="font-gothic">Latest Posts!</h2>
+    <p>Get the latest updates.</p>
 
     <div class="responsive-grid">
       {filteredPosts.map((post) => <Card {post} />)}
