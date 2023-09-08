@@ -19,6 +19,9 @@ devDependencies:
   '@fontsource/league-gothic':
     specifier: ^5.0.11
     version: 5.0.11
+  '@fontsource/oswald':
+    specifier: ^5.0.11
+    version: 5.0.11
   sass:
     specifier: ^1.66.1
     version: 1.66.1
@@ -673,6 +676,10 @@ packages:
 
   /@fontsource/league-gothic@5.0.11:
     resolution: {integrity: sha512-TFHZU/ctdP3TOGExVU4T5sdHUQVEPZm2+Y0SnBLBVpwiYfOlcL2a6EVFlNAUkDeV8L9frKSTd+2VyO51TKWV0A==}
+    dev: true
+
+  /@fontsource/oswald@5.0.11:
+    resolution: {integrity: sha512-jyNh8+HGhB4nV1W/tyRU8jHFB9f0SPIh6ViV92RP2mt/sYv8vJ64F2ujLNgOEQIXWsKX7tX1AphDdi48IRygCw==}
     dev: true
 
   /@jridgewell/gen-mapping@0.3.3:

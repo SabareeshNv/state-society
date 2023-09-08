@@ -18,7 +18,7 @@ const { title, description, pubDate, category, imageSrc, imageAlt } =
 ---
 
 <BaseLayout {title} {description}>
-  <article>
+  <article class="wrapper">
     <div class="article-head">
       <a href={`/category/${slugify(category)}`} class="article-head-category"
         >{category}</a
