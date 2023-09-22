@@ -4,8 +4,8 @@ summary: "Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum ani
 description: "some description"
 pubDate: "2023-02-01"
 category: "Typography"
-imageSrc: "../../assets/images/post/typography.png"
-imageAlt: "A picture of a coder"
+imageSrc: "../../assets/images/post/typo.png"
+imageAlt: "Typography"
 featured: true
 ---
 
@@ -18,6 +18,10 @@ Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim qui moll
 ## Heading two
 
 Aute officia nulla deserunt do deserunt cillum velit magna. Officia veniam culpa anim minim dolore labore pariatur voluptate id ad est duis quis velit dolor pariatur enim. Incididunt enim excepteur do veniam consequat culpa do voluptate dolor fugiat ad adipisicing sit. Labore officia est adipisicing dolore proident eiusmod exercitation deserunt ullamco anim do occaecat velit. Elit dolor consectetur proident sunt aliquip est do tempor quis aliqua culpa aute. Duis in tempor exercitation pariatur et adipisicing mollit irure tempor ut enim esse commodo laboris proident. Do excepteur laborum anim esse aliquip eu sit id Lorem incididunt elit irure ea nulla dolor et. Nulla amet fugiat qui minim deserunt enim eu cupidatat aute officia do velit ea reprehenderit.
+
+## Lorem consequat culpa do voluptate dolor fugiat ad adipisicing sit.
+
+Veniam fugiat et amet ad elit anim laborum duis mollit occaecat et et ipsum et reprehenderit. Occaecat aliquip dolore adipisicing sint labore occaecat officia fugiat. Quis adipisicing exercitation exercitation eu amet est laboris sunt nostrud ipsum reprehenderit ullamco. Enim sint ut consectetur id anim aute voluptate exercitation mo.
 
 ### Heading three
 

@@ -93,8 +93,9 @@ img {
 .responsive-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-  column-gap: 1em;
-  row-gap: 2em;
+  // column-gap: 1em;
+  // row-gap: 2em;
+  gap: 1.5em;
   margin-block: 2em;
 }
 
@@ -121,17 +122,19 @@ img {
 
 // Typography Styles
 .prose {
-  max-width: 70ch;
+  max-width: 75ch;
   word-spacing: 0.15rem;
   font-size: var(--fs-3);
   margin-inline: auto;
 
   h1 {
     font-size: var(--fs-6);
+    line-height: 1.3;
   }
 
   h2 {
     font-size: var(--fs-5);
+    line-height: 1.3;
   }
 
   h3,
@@ -139,6 +142,7 @@ img {
   h5,
   h6 {
     font-size: var(--fs-4);
+    line-height: 1.3;
   }
 
   blockquote {
