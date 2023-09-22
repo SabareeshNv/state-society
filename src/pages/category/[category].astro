@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import { formatBlogPosts, slugify } from "../../js/helpers";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("post");
+  const filteredPosts = formatBlogPosts(allPosts);
+
+  const uniqueCategory = [
+    ...new Set(filteredPosts.map((post) => slugify(post.data.category)).flat()),
+  ] as string[];
+
+  return uniqueCategory.map((category) => {
+    const categoryPosts = filteredPosts.filter((post) =>
+      slugify(post.data.category).includes(category)
+    );
+    console.log(categoryPosts);
+    return {
+      params: { category },
+      props: { posts: categoryPosts },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+const title = `All the Posts related to ${category}`;
+const description = `All the Posts related to ${category}`;
+---
+
+<BaseLayout {title} {description}>
+  <div class="wrapper padding-y">
+    <h1 class="text-2xl">
+      View all the posts on the topic of &nbsp; ' <span>{category}</span> '
+    </h1>
+
+    <div class="responsive-grid">
+      {posts.map((post) => <Card {post} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  span {
+    color: #581c87;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+</style>

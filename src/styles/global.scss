@@ -92,10 +92,9 @@ img {
 
 .responsive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-  // column-gap: 1em;
-  // row-gap: 2em;
-  gap: 1.5em;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  grid-column-gap: 1.5em;
+  grid-row-gap: 3em;
   margin-block: 2em;
 }
 

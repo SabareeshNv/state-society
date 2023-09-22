@@ -13,7 +13,7 @@ const { title, summary, category, imageSrc, imageAlt } = post.data;
     </a>
   </div>
   <div class="card-content">
-    <a href={`/post/category/${slugify(category)}`} class="card-category"
+    <a href={`/category/${slugify(category)}`} class="card-category"
       >{category.toUpperCase()}</a
     >
 
@@ -75,7 +75,7 @@ const { title, summary, category, imageSrc, imageAlt } = post.data;
   }
 
   p {
-    font-size: 1.1rem;
-    line-height: 1.4;
+    font-size: 1.15rem;
+    line-height: 1.5;
   }
 </style>

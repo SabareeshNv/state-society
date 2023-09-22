@@ -20,9 +20,8 @@ const { title, description, pubDate, category, imageSrc, imageAlt } =
 <BaseLayout {title} {description}>
   <article class="wrapper">
     <div class="article-head">
-      <a
-        href={`/post/category/${slugify(category)}`}
-        class="article-head-category">{category.toUpperCase()}</a
+      <a href={`/category/${slugify(category)}`} class="article-head-category"
+        >{category.toUpperCase()}</a
       >
       <h1>{title}</h1>
 
