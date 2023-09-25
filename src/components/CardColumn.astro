@@ -8,7 +8,9 @@ const { title, summary, category, imageSrc, imageAlt } = post.data;
 
 <article>
   <div class="img-container">
-    <Image src={imageSrc} alt={imageAlt} class="card-img shadow" />
+    <a href={`/post/${post.slug}/`}>
+      <Image src={imageSrc} alt={imageAlt} class="card-img shadow" />
+    </a>
   </div>
   <div class="meta-data">
     <a href={`/category/${slugify(category)}`} class="card-category"
