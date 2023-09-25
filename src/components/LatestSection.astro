@@ -1,5 +1,5 @@
 ---
-import Card from "./Card.astro";
+import CardColumn from "./CardColumn.astro";
 import { getCollection } from "astro:content";
 import { formatBlogPosts } from "../js/helpers";
 
@@ -7,23 +7,52 @@ const allPosts = await getCollection("post");
 const filteredPosts = formatBlogPosts(allPosts, { limit: 6 });
 ---
 
-<section>
-  <div class="wrapper padding-y">
-    <h2 class="font-oswald">Latest Posts!</h2>
-    <p>Get the latest updates.</p>
-
-    <div class="responsive-grid">
-      {filteredPosts.map((post) => <Card {post} />)}
+<section class="wrapper padding-y">
+  <div class="between">
+    <div>
+      <h2 class="font-oswald">Latest Posts!</h2>
+      <p>Get the latest updates.</p>
     </div>
+    <div>
+      <a href="/post" class="explore-button">Explore All</a>
+    </div>
+  </div>
+
+  <div class="latest-grid padding-y">
+    {filteredPosts.map((post) => <CardColumn {post} />)}
   </div>
 </section>
 
-<style>
+<style lang="scss">
+  .between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .explore-button {
+    font-size: var(--fs-3);
+    background-color: var(--clr-white);
+    color: var(--clr-dark);
+    padding: 0.75em 1em;
+    border: 1px solid var(--clr-dark);
+  }
+
   h2 {
     font-size: var(--fs-6);
   }
 
   p {
     font-size: var(--fs-4);
+  }
+
+  .latest-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4em;
+
+    @media (min-width: 1080px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>

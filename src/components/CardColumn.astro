@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import { slugify } from "../js/helpers";
+
+const { post } = Astro.props;
+const { title, summary, category, imageSrc, imageAlt } = post.data;
+---
+
+<article>
+  <div class="img-container">
+    <Image src={imageSrc} alt={imageAlt} class="card-img shadow" />
+  </div>
+  <div class="meta-data">
+    <a href={`/category/${slugify(category)}`} class="card-category"
+      >{category.toUpperCase()}</a
+    >
+    <h2>
+      <a href={`/post/${post.slug}/`}>{title}</a>
+    </h2>
+
+    <p>
+      {summary}
+    </p>
+  </div>
+</article>
+
+<style lang="scss">
+  article {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.2em;
+
+    @media (min-width: 550px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card-img {
+    border-radius: 0.35em;
+  }
+
+  .meta-data {
+    padding-block: 0.5em;
+    @media (min-width: 550px) {
+      padding-inline: 1em;
+    }
+  }
+
+  .card-img {
+    min-height: 17em;
+    height: 100%;
+    width: 100%;
+  }
+
+  .card-category {
+    display: inline-block;
+    margin-block-end: 1em;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: #581c87;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: var(--fs-4);
+    line-height: 1.25;
+    margin-block-end: 0.75em;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+</style>
